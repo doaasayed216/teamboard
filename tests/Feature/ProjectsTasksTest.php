@@ -61,4 +61,9 @@ class ProjectsTasksTest extends TestCase
         $task->assign($user);
         $this->assertTrue($task->assigned_to->contains($user));
     }
+
+    public function test_me()
+    {
+        
+    }
 }
