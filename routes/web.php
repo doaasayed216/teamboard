@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'prevent.back.history'])->group(function (){
     Route::get('/', [ProjectController::class, 'index'])->name('dashboard');
+    Route::get('/test', function() {
+        return "test";
+    });
     Route::resource('projects', ProjectController::class);
     Route::post('/projects/{project}/invitations', [MemberController::class, 'store']);
     Route::prefix('/projects/{project}/')->group(function (){
